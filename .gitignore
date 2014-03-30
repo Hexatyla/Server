@@ -22,3 +22,6 @@
 
 # SQL Config File
 config/mysql.json
+
+# Dependicies files
+*.deps
