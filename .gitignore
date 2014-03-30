@@ -19,3 +19,6 @@
 *.exe
 *.out
 *.app
+
+# SQL Config File
+config/mysql.json.dflt
