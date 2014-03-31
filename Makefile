@@ -5,7 +5,7 @@
 ## Login   <baudui_g@epitech.net>
 ## 
 ## Started on  Wed Feb  5 14:00:43 2014 geoffrey bauduin
-## Last update Sun Mar 30 19:08:19 2014 geoffrey bauduin
+## Last update Mon Mar 31 23:34:28 2014 geoffrey bauduin
 ##
 
 NAME=			server
@@ -19,7 +19,8 @@ ROOMDIR=		$(SRCDIR)/Room
 FACTORYDIR=		$(SRCDIR)/Factory
 PARSERDIR=		$(SRCDIR)/Parser
 
-SRC_PARSER=		$(PARSERDIR)/Race.cpp
+SRC_PARSER=		$(PARSERDIR)/Race.cpp			\
+			$(PARSERDIR)/SQL.cpp
 
 SRC_NETWORK=		$(NETWORKDIR)/UserJob.cpp		\
 			$(NETWORKDIR)/Manager/Server.cpp
@@ -96,9 +97,9 @@ SRC=		$(SRC_PARSER)	\
 
 OBJ=		$(SRC:.cpp=.o)
 
-COMMON=		common/common.a
+COMMON=		common/hexatylaCommon.so
 
-LDFLAGS=	-lssl -lcrypto -lpthread -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -lm
+LDFLAGS=	-lssl -lcrypto -lpthread -L/usr/include/mysql -lmysqlclient -I/usr/include/mysql -lm common/libs/libjson.a -Wl,-rpath,./lib/ common/hexatylaCommon.so -L./common/libs -ljson
 
 INCLUDES=	-Iincludes -Icommon/includes
 

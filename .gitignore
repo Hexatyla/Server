@@ -25,3 +25,7 @@ config/mysql.json
 
 # Dependicies files
 *.deps
+
+# Application
+
+server
